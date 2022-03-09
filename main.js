@@ -13,7 +13,7 @@ rover_y = 10;
 
 function add() {
     background_imgTag = new Image ();
-    background_imgTag.onload = uploadbackground;
+    background_imgTag.onload = uploadBackground;
     background_imgTag.src = background_image;
 
     rover_imgTag = new Image ();
@@ -74,7 +74,7 @@ function up()
 
 function down()
 {
-    if(rover_y >= 500)
+    if(rover_y <= 500)
     {
         rover_y = rover_y +10;
         console.log("when down arrow is pressed, x = " + rover_x + " | y = " + rover_y);
@@ -104,3 +104,10 @@ function right()
         uploadrover();
     }
 }
+ 
+nasa_mars_images_array = ["nasa 1.jpg", "nasa 2.jpg", "nasa 3.jpg", "nasa 4.jpg"]; 
+
+random_number = Math.floor(Math.random() * 4);
+
+background_image = nasa_mars_images_array[random_number];
+console.log("background_image = " + background_image);
